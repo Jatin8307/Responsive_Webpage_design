@@ -1,0 +1,166 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0.5em 0;
+    margin: 0;
+  }
+  .nav-links li {
+    margin: 0 1em;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover {
+    color: #ff9800;
+  }
+  
+
+  .container {
+    display: flex;
+    margin-top: 5em;
+    padding: 1em;
+  }
+  
+  /* Left Menu */
+  .left-menu {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 1em;
+    transition: width 0.3s;
+  }
+  .left-menu h2{
+    text-align: center;
+    margin: 1rem;
+  }
+  .left-menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .left-menu ul li {
+    margin-bottom: 0.5em;
+  }
+  .left-menu ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  .left-menu img {
+    width: 100%;
+    margin-top: 1em;
+    border-radius: 8px;
+  }
+  .left-menu p {
+    margin-top: 1em;
+    line-height: 1.5;
+  }
+  .toggle-menu {
+    display: none; /* checkbox ko hide krega */
+  }
+  
+  .menu-label {
+    display: none; /*by default hidden rkhega menu 3 lines wale menu ko */
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    background-color: #333;
+    color: white;
+    padding: 0.5em;
+    cursor: pointer;
+    z-index: 1001; 
+  }
+
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    padding: 1em;
+    background-color: #fff;
+  }
+  .main-content h1{
+    text-align: center;
+  }
+  .main-content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+    border-radius: 8px;
+  }
+  .main-content p {
+    margin-top: 1em;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  /* Right Panel */
+  .right-panel {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 1em;
+  }
+  .right-panel h2{
+    text-align: center;
+  }
+  .right-panel img {
+    width: 100%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+  }
+  .right-panel p {
+    line-height: 1.5;
+  }
+  
+  /* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    font-size: 0.9em;
+  }
+  .footer a {
+    color: #ff9800;
+    text-decoration: none;
+    margin: 0 0.5em;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  
+/* Media Queries */
+@media screen and (max-width: 2400px){
+    .menu-label {
+      display: block; /*idr hamburger menu hoga*/
+}
+  
+.left-menu {
+    width: 0; /* by default collapse rhega */
+    overflow: hidden; /* collapsed rehte hue content hide rhega */
+    visibility: hidden;
+    transition: width 0.1s ease-in-out, visibility 0.1s ease-in-out; 
+}
+  
+.toggle-menu:checked + .menu-label + .left-menu {
+      width: 20%; /* expand krne ke lie */
+      visibility: visible;
+      overflow: auto; /* scroll krne ke lie */
+    }
+}
+  
